@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.mvvmsampleapp.models.Item" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_item_horizontal_margin"
+        android:layout_marginTop="@dimen/grid_item_margin_top"
+        android:layout_marginEnd="@dimen/grid_item_horizontal_margin">
+
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/image_round_outline"
+            android:contentDescription="@string/item_image"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_item_name_margin_top"
+            android:text="@{item.name}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/item_image"
+            app:layout_constraintStart_toStartOf="@id/item_image"
+            app:layout_constraintTop_toBottomOf="@id/item_image" />
+
+        <TextView
+            android:id="@+id/item_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.price}"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/item_image"
+            app:layout_constraintStart_toStartOf="@id/item_image"
+            app:layout_constraintTop_toBottomOf="@id/item_name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

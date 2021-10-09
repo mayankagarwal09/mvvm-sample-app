@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appBarBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/toolbar_side_margin"
+                    android:layout_marginTop="@dimen/toolbar_top_margin"
+                    android:layout_marginRight="@dimen/toolbar_side_margin"
+                    android:layout_marginBottom="@dimen/toolbar_bottom_margin"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/explore_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/header_text_margin"
+                        android:text="@string/explore"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/header_primary_text_size"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/search_view"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/filter_textView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/filter_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/header_text_margin"
+                        android:layout_marginBottom="@dimen/header_text_margin"
+                        android:gravity="end"
+                        android:text="@string/filter"
+                        android:textColor="@color/teal"
+                        android:textSize="@dimen/header_secondary_text_size"
+                        app:layout_constraintBottom_toTopOf="@id/search_view"
+                        app:layout_constraintEnd_toEndOf="@+id/search_view"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/search_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/search_view_rounded"
+                        app:iconifiedByDefault="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:queryBackground="@android:color/transparent"
+                        app:queryHint="Search"
+                        app:searchHintIcon="@null"
+                        app:searchIcon="@null" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

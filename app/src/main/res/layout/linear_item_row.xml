@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.mvvmsampleapp.models.Item" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/linear_item_horizontal_margin"
+        android:layout_marginTop="@dimen/linear_item_vertical_margin"
+        android:layout_marginEnd="@dimen/linear_item_horizontal_margin">
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="@dimen/linear_item_image_size"
+            android:layout_height="@dimen/linear_item_image_size"
+            android:layout_marginEnd="@dimen/linear_image_margin_end"
+            android:background="@drawable/image_round_outline"
+            android:contentDescription="@string/item_image"
+            app:layout_constraintEnd_toStartOf="@id/item_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/linear_item_name_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/item_price_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_image"
+            app:layout_constraintTop_toTopOf="@+id/item_image" />
+
+        <TextView
+            android:id="@+id/item_price_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price_label_text"
+            android:textSize="@dimen/linear_item_price_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/item_image"
+            app:layout_constraintStart_toStartOf="@+id/item_name"
+            app:layout_constraintTop_toBottomOf="@id/item_name" />
+
+        <TextView
+            android:id="@+id/item_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.price}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/linear_item_price_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/item_image"
+            app:layout_constraintEnd_toStartOf="@id/item_extra"
+            app:layout_constraintStart_toEndOf="@id/item_price_label"
+            app:layout_constraintTop_toBottomOf="@id/item_name" />
+
+        <TextView
+            android:id="@+id/item_extra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.extra}"
+            android:textColor="@color/extraTextColor"
+            android:textSize="@dimen/linear_item_extra_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/item_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_price"
+            app:layout_constraintTop_toBottomOf="@id/item_name" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/linear_item_divider_margin_top"
+            android:background="@color/dividerColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/item_name"
+            app:layout_constraintTop_toBottomOf="@id/item_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

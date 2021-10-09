@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MVVM Sample App</string>
+    <string name="explore">Explore</string>
+    <string name="filter">Filter</string>
+    <string name="third_fragment">Third Fragment</string>
+    <string name="price_label_text">MRP:</string>
+    <string name="item_image">Item Image</string>
+</resources>

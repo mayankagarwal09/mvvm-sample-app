@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/first_dest"
+        android:color="#fff"
+        android:enabled="true"
+        android:icon="@drawable/round_button"
+        android:title="" />
+    <item
+        android:id="@+id/second_dest"
+        android:enabled="true"
+        android:icon="@drawable/round_button"
+        android:title="" />
+    <item
+        android:id="@+id/third_dest"
+        android:enabled="true"
+        android:icon="@drawable/round_button"
+        android:title="" />
+    <item
+        android:id="@+id/fourth_dest"
+        android:enabled="true"
+        android:icon="@drawable/round_button"
+        android:title="" />
+    <item
+        android:id="@+id/fifth_dest"
+        android:enabled="true"
+        android:icon="@drawable/round_button"
+        android:title="" />
+</menu>
