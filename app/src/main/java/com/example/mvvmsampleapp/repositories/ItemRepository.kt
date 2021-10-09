@@ -1,10 +1,12 @@
 package com.example.mvvmsampleapp.repositories
 
-import com.example.mvvmsampleapp.api.ItemApi
+import com.example.mvvmsampleapp.api.ItemApiService
 import com.example.mvvmsampleapp.models.ApiResponse
+import javax.inject.Inject
 
-class ItemRepository {
+class ItemRepository @Inject constructor(private val itemService: ItemApiService) {
+
     suspend fun loadItemList(): ApiResponse {
-        return ItemApi.retrofitService.loadItems()
+        return itemService.loadItems()
     }
 }

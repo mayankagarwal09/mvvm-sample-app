@@ -10,8 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mvvmsampleapp.adapters.ItemAdapter
 import com.example.mvvmsampleapp.databinding.FragmentFirstBinding
 import com.example.mvvmsampleapp.viewModels.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class FirstFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding

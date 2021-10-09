@@ -7,11 +7,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mvvmsampleapp.models.Item
 import com.example.mvvmsampleapp.repositories.ItemRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
-    private val itemRepository = ItemRepository()
+@HiltViewModel
+class MainViewModel @Inject constructor(private val itemRepository: ItemRepository) : ViewModel() {
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         Log.d(javaClass.simpleName, "error: ${throwable.localizedMessage}")

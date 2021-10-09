@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mvvmsampleapp.adapters.ItemAdapter
 import com.example.mvvmsampleapp.databinding.FragmentSecondBinding
 import com.example.mvvmsampleapp.viewModels.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding
