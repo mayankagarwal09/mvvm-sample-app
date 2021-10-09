@@ -11,21 +11,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mvvmsampleapp.adapters.ItemAdapter
 import com.example.mvvmsampleapp.constants.Status
 import com.example.mvvmsampleapp.databinding.FragmentSecondBinding
-import com.example.mvvmsampleapp.di.qualifiers.GridAdapter
 import com.example.mvvmsampleapp.viewModels.MainViewModel
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
-@AndroidEntryPoint
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding
 
-    @Inject
-    lateinit var layoutManager: GridLayoutManager
-
-    @GridAdapter
-    @Inject
     lateinit var adapter: ItemAdapter
     private val mainViewModel: MainViewModel by activityViewModels()
 
@@ -36,6 +27,8 @@ class SecondFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSecondBinding.inflate(layoutInflater, container, false)
 
+        val layoutManager = GridLayoutManager(requireContext(), 3)
+        adapter = ItemAdapter(layoutManager)
         binding.gridRecyclerView.layoutManager = layoutManager
         binding.gridRecyclerView.adapter = adapter
 
