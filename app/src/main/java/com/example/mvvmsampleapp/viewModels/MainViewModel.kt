@@ -27,7 +27,6 @@ class MainViewModel @Inject constructor(private val itemRepository: ItemReposito
     fun getItemList() {
         viewModelScope.launch(coroutineExceptionHandler) {
             val response = itemRepository.loadItemList()
-            Log.d(javaClass.simpleName, "response: $response")
             if (response.status == "success") {
                 _itemList.value = response.data.items
             }

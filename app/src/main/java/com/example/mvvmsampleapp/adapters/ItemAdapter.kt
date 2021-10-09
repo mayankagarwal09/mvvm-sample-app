@@ -10,8 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmsampleapp.databinding.GridItemRowBinding
 import com.example.mvvmsampleapp.databinding.LinearItemRowBinding
 import com.example.mvvmsampleapp.models.Item
+import javax.inject.Inject
 
-class ItemAdapter(private val layoutManager: RecyclerView.LayoutManager) :
+class ItemAdapter @Inject constructor(private val layoutManager: RecyclerView.LayoutManager) :
     ListAdapter<Item, ItemAdapter.ItemViewHolder>(ItemDiffUtil()) {
 
 

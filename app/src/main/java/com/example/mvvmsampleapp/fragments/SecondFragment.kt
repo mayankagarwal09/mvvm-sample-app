@@ -9,14 +9,22 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mvvmsampleapp.adapters.ItemAdapter
 import com.example.mvvmsampleapp.databinding.FragmentSecondBinding
+import com.example.mvvmsampleapp.di.qualifiers.GridAdapter
 import com.example.mvvmsampleapp.viewModels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding
-    private lateinit var adapter: ItemAdapter
+
+    @Inject
+    lateinit var layoutManager: GridLayoutManager
+
+    @GridAdapter
+    @Inject
+    lateinit var adapter: ItemAdapter
     private val mainViewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -26,9 +34,7 @@ class SecondFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSecondBinding.inflate(layoutInflater, container, false)
 
-        val layoutManager = GridLayoutManager(requireContext(), 3)
         binding.gridRecyclerView.layoutManager = layoutManager
-        adapter = ItemAdapter(layoutManager)
         binding.gridRecyclerView.adapter = adapter
 
         mainViewModel.itemList.observe(viewLifecycleOwner, {
