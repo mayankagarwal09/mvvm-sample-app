@@ -1,4 +1,4 @@
-package com.example.mvvmsampleapp.models
+package com.example.mvvmsampleapp.utils
 
 import com.example.mvvmsampleapp.constants.Status
 
